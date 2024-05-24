@@ -140,6 +140,9 @@ export const loginUser = async (req: Request, res: Response) => {
     });
   }
 
+  const userId = user.id_user
+  const username = user.usr_name
+
   //Validate if the password is correct
   const validPassword = await bcrypt.compare(usr_pass, user.usr_pass);
 
@@ -156,12 +159,14 @@ export const loginUser = async (req: Request, res: Response) => {
     },
     process.env.SECRET_KEY || "secret",
     {
-      expiresIn: "1800000", //30 minutes
+      expiresIn: "1d",
     }
   );
 
   res.json({
     msg: "Logged in",
     token,
+    userId,
+    username
   });
 };
