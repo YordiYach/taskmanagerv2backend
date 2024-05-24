@@ -90,7 +90,6 @@ export const updateUser = [
 ];
 
 export const newUser = [
-  isAdmin,
   async (req: Request, res: Response) => {
     const { usr_name, usr_email, usr_pass, id_usr_type } = req.body;
 

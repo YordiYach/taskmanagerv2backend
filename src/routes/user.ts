@@ -149,7 +149,7 @@ router.put("/:id", validateToken, updateUser);
  *      404:
  *       description: No encontrado.
  */
-router.post("/", validateToken, newUser);
+router.post("/", newUser);
 
 /**
  * @swagger
