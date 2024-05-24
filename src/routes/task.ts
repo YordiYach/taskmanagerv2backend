@@ -31,7 +31,7 @@ const router = Router();
  *      404:
  *        description: No se encontraron tareas registradas
  */
-router.get("/", validateToken, getTasks);
+router.get("/", getTasks);
 
 
 /**
