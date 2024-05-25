@@ -7,6 +7,11 @@
     "build": "tsc",
     "start": "node --env-file=.env dist/index.js"
   },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
